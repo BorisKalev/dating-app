@@ -1,0 +1,46 @@
+﻿
+.nomatch {
+    color: red;
+}
+
+admin-page {
+    color: #ffeba7 !important;
+}
+
+
+thead, tbody {
+    color: #ffeba7 !important;
+}
+
+.bouton-create {
+    color: #ffeba7;
+    margin-top : 140px;
+}
+
+.bouton-create a {
+        color: #ffeba7;
+    }
+
+h1 {
+    color: #ffeba7;
+}
+
+
+
+.nav-link {
+    color: #ffeba7 !important;
+}
+
+.barre-recherche input{
+    color: #ffeba7;
+    background-color : gray;
+}
+
+.action-link a{
+    color: #ffeba7;
+}
+
+.action-delete a {
+    color: #D6114C;
+}
+

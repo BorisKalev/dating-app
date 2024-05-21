@@ -1,0 +1,172 @@
+﻿@using ProjFinRBEM.Helpers;
+
+
+@model ProjFinRBEM.Models.User
+
+
+
+@{
+
+    ViewData["Title"] = "Edit";
+
+}
+
+
+
+<style>
+
+    body {
+        overflow-y: scroll;
+    }
+</style>
+
+
+
+<h1>Edit Profile</h1>
+
+
+
+<h4>User</h4>
+
+<hr />
+@{
+    User user = SessionHelper.GetObjectFromJson<User>(Context.Session, "CurrentUser");
+    
+
+}
+<form asp-action="Index">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <input type="hidden" asp-for="DateOfBirth"/>
+
+            <div class="form-group">
+
+                <label asp-for="TypeOfUser" class="control-label"></label>
+
+                <input readonly asp-for="TypeOfUser" class="form-control" value="@user.TypeOfUser" />
+
+                <span asp-validation-for="TypeOfUser" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="FirstName" class="control-label"></label>
+
+                <input readonly asp-for="FirstName" class="form-control" value="@user.FirstName" />
+
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Username" class="control-label"></label>
+
+                <input asp-for="Username" class="form-control" value="@user.Username" />
+
+                <span asp-validation-for="Username" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Email" class="control-label"></label>
+
+                <input readonly asp-for="Email" class="form-control" value="@user.Email" />
+
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+            </div>
+
+           @*<div class="form-group">
+
+                <label asp-for="DateOfBirth" class="control-label"></label>
+
+                <input readonly asp-for="DateOfBirth" class="form-control" value="@user.DateOfBirth" />
+
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+
+            </div>*@
+
+            <div class="form-group">
+
+                <label asp-for="Gender" class="control-label"></label>
+
+                <input readonly asp-for="Gender" class="form-control" value="@user.Gender" />
+
+                <span asp-validation-for="Gender" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Password" class="control-label"></label>
+
+                <input readonly asp-for="Password" class="form-control" value="@user.Password" />
+
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+
+                <label asp-for="Description" class="control-label">Description</label>
+
+                <textarea asp-for="Description" class="form-control" value="@user.Description"></textarea>
+
+                <span asp-validation-for="Description" class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label asp-for="ProfileImage" class="control-label">Télécharger une image</label>
+
+                <input asp-for="ProfileImage" type="file" class="form-control" value="@user.ProfileImage"  />
+
+                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <input type="submit" value="Save" class="btn btn-primary" />
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+
+@section Scripts {
+
+    @{
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+
+}

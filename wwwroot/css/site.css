@@ -1,0 +1,64 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+
+a {
+    color: #ffeba7 !important;
+}
+
+th, tr {
+    color: #ffeba7;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    overflow-y: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #ffeba7;
+    background-color: #1f2029;
+    overflow : scroll;
+}
+
+nav-item {
+    color: #ffeba7;
+}
+
+
+
+.navbar-brand {
+    color: #ffeba7;
+}
+
+
+.custom-section-class {
+    color: #ffeba7 ;
+    background-color: #1f2029;
+}
+
+.navbar {
+    background-image: url('../img/love-bakcground.jpg');
+}
+
+.container2 {
+    color: #ffeba7;
+    margin-left: 0px;
+    background-image: url('../img/love-bakcground.jpg');
+}

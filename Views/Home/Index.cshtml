@@ -1,0 +1,108 @@
+﻿@*@model IEnumerable<ProjFinRBEM.Models.User>
+
+@using Microsoft.AspNetCore.Http;
+
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+
+
+@{
+    ViewData["Title"] = "Admin Menu";
+}
+<div class="admin-page">
+    <h1>Les utilisateurs actifs</h1>
+</div>
+
+
+
+
+
+
+@using (Html.BeginForm("Index", "Admin", FormMethod.Get))
+{
+    <div class="barre-recherche">
+        Rechercher la personne: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </div>
+}
+
+@if (ViewBag.Vide == false)
+{
+    <h2> <span class="nomatch"> No match Found </span> </h2>
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+
+
+                <td>
+                    <span class="action-link">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    </span>
+                    <span class="action-delete">
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </span>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+
+</table>
+
+<div class="bouton-create">
+    <p>
+        <a asp-action="Create"> Ajouter un membre</a>
+    </p>
+
+</div>*@
